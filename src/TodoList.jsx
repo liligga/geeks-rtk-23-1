@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import { addTodo, removeTodo, fetchTodos } from './store/todosSlice'
+import { addTodo, asyncDeleteTodo, fetchTodos } from './store/todosSlice'
 
 
 
@@ -34,9 +34,9 @@ const TodoList = () => {
                             {item.todo}
                         <button
                             onClick={
-                                () => dispatch(removeTodo(item.id))
+                                () => dispatch(asyncDeleteTodo(item.id))
                             }
-                        >X</button></li>
+                        >&#9851;</button></li>
                     )}
                 </ul>
             }
